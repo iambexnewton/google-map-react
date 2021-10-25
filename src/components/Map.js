@@ -35,15 +35,12 @@ export class MapContainer extends Component {
   render() {
     return (
       <div className="map-container">
-        <img src={iss} alt="ISS icon" className="iss" />
+        <img src={iss} alt="ISS icon" className="iss-icon" />
         <Map
           google={this.props.google}
-          zoom={11}
+          zoom={4}
           style={mapStyles}
-          initialCenter={{
-            lat: 56.11816,
-            lng: 10.19289,
-          }}
+          initialCenter={this.props.center}
         >
           {this.showMarkers()}
         </Map>
